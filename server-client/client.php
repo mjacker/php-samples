@@ -6,7 +6,7 @@
 				<tr>
 					<td><label>Enter Message</label>
 						<input type="text" name="txtMessage">
-						<input type-"submit" name"btnSend" = value ="Send">
+						<input type="submit" name="btnSend" value="Send">
 					</td>
 				</tr>
 				<?php
@@ -17,12 +17,12 @@
 					{
 						$msg = $_REQUEST['txtMessage'];
 						$sock = socket_create(AF_INET, SOCK_STREAM, 0);
-						socket_connect($sock, $host, $port)
+						socket_connect($sock, $host, $port);
 
 						socket_write($sock, $msg, strlen($msg));
 
 						$reply = socket_read($sock, 1924);
-						$reply = trim($reply)
+						$reply = trim($reply);
 							$reply = "server says:\t".$reply;
 					}
 ?>
